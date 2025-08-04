@@ -1,4 +1,4 @@
-# main.py
+harishkshkin.py
 
 import asyncio
 from pyrogram import Client, filters
@@ -38,8 +38,8 @@ async def get_balance(client: Client, user_id: int, number_input: str, temp_mess
     The username is constructed from a hardcoded prefix and the user's number input.
     The password is hardcoded directly.
     """
-    username = f"harishk{number_input}"
-    password = "pa1@P"
+    username = f"Gtmrhk{number_input}"
+    password = "956683hH"
     
     display_name = f"Account #{number_input}"
 
@@ -127,7 +127,7 @@ async def get_balance(client: Client, user_id: int, number_input: str, temp_mess
         balance_data = balance_response.json()
 
         balance_info = balance_data.get('balance', {})
-        main_balance = balance_info.get('main_balance', 'N/A')
+        main_balance = round(float(balance_info.get('main_balance', 0)))
         exposure = balance_info.get('exposure', 'N/A')
 
         result_text = (
