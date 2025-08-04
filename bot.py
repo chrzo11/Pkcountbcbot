@@ -1,4 +1,3 @@
-harishkshkin.py
 
 import asyncio
 from pyrogram import Client, filters
