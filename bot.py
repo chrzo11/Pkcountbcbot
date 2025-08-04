@@ -126,8 +126,18 @@ async def get_balance(client: Client, user_id: int, number_input: str, temp_mess
         balance_data = balance_response.json()
 
         balance_info = balance_data.get('balance', {})
-        main_balance = balance_info.get('main_balance', 'N/A')
-        exposure = balance_info.get('exposure', 'N/A')
+        main_balance_raw = balance_info.get('main_balance', 'N/A')
+exposure_raw = balance_info.get('exposure', 'N/A')
+
+try:
+    main_balance = str(int(float(main_balance_raw)))
+except (ValueError, TypeError):
+    main_balance = 'N/A'
+
+try:
+    exposure = str(int(float(exposure_raw)))
+except (ValueError, TypeError):
+    exposure = 'N/A'
 
         result_text = (
             f"👤 **Account:** `{display_name}`\n"
